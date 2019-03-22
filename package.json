@@ -1,0 +1,11 @@
+{
+  "name": "nora",
+  "version": "0.1.0",
+  "description": "A distributed networking engine (DNE) for decentalized social apps",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fenne_kitsune",
+  "license": "MIT"
+}

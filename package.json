@@ -7,12 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/kay-ron/nora"
+    "type": "git",
+    "url": "https://github.com/kay-ron/nora"
   },
   "author": "fenne_kitsune",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.3",
     "sqlite3": "^4.0.6"
   }
 }

@@ -21,7 +21,9 @@ Better yet, it is cross-platform thanks to NodeJS and planned interaction with C
 
 # Ok, show me some examples
 
-If you want to experience it for yourself, then check out **Analogue-1**.
+If you want to see it in action, then check out the development of the decentralized/distributed IM app: **Analogue-1**.
 
 # What license?
 This software is released under the MIT License.
+
+This software is also copyrighted 2019 by fenne_citsune.

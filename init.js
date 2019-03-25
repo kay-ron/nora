@@ -1,6 +1,5 @@
 const DAO = require('./DAO.js')
 const fs = require('fs')
-var portfinder = require('portfinder')
 const Repository = require('./repository.js')
 
 
@@ -20,7 +19,6 @@ function directory(dbfp) {
 const NORA = new directory('./nora/data')
 
 function N(selector) {
-    const datreposit = new Repository(DAO)
     selector ? null : new NORA.Node()
 }
 
@@ -51,15 +49,7 @@ NORA.Node = function () {
         }
         var pport = function(){
             i = 0
-            while(i < PORT_NUMS.length) {
-                portfinder.getPort({
-                    port = PORT_NUMS[i],
-                    stopPort = PORT_NUMS[i] - 1},
-                function(err, port) {
-                    if (err) i++
-                    return port
-                })
-            }
+            
         }
         var vers = '0.1.0'
 
@@ -83,5 +73,5 @@ NORA.Node = function () {
         DAO.create(sid(1), [screen, username, sid(2), interproto,
         pport, platform(), vers])
     }
-    
+
 }

@@ -14,6 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.3",
+    "dat-swarm-defaults": "^1.0.2",
+    "discovery-swarm": "^5.1.4",
     "get-port": "^4.2.0",
     "level": "^4.0.0",
     "network": "^0.4.1"

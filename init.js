@@ -26,7 +26,6 @@ function N(selector) {
 }
 
 NORA.Node = function () {
-    const datreposit = new Repository(DAO)
 
     this.create = function() {
         const PORT_NUMS = [1776, 1791, 1865, 1964]
@@ -72,8 +71,5 @@ NORA.Node = function () {
             }
         }
 
-        datreposit.createDIRtable(AC.initialize)
-        datreposit.IN(screen, username, analogue_nid,
-        interproto, pport, platform(), vers)
     }
 }

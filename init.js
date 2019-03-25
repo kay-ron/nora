@@ -1,5 +1,4 @@
-const AC = require('./AC.js')
-const DAO = require('./dao.js')
+const DAO = require('./DAO.js')
 const fs = require('fs')
 var portfinder = require('portfinder')
 const Repository = require('./repository.js')
@@ -11,31 +10,41 @@ function directory(dbfp) {
             fs.statSync(folder)
         } catch(e) {
             fs.mkdirSync(folder)
-            const Init = new DAO('./storage.sqlite3')
+            new DAO('./data/leveld')
         }
     }
 
     this.check(dbfp)
 }
 
-const NORA = new directory('./database')
+const NORA = new directory('./nora/data')
 
 function N(selector) {
     const datreposit = new Repository(DAO)
-    selector ? datreposit.getIP(selector) : new NORA.Node()
+    selector ? null : new NORA.Node()
 }
 
 NORA.Node = function () {
-
     this.create = function() {
         const PORT_NUMS = [1776, 1791, 1865, 1964]
 
         var screen = readline()
         var username = `@${readline()}`
-        var analogue_nid = function() {
+        var sid = function(value) {
+            let id_type
+
             crypto.randomBytes(79, (err, buf) => {
                 if (err) throw err
-                buf.toString('hex')})
+            id_type = buf.toString('hex')})
+
+            switch(value) {
+                case 1:
+                    id = `Ø${id_type}`
+                break
+                case 2:
+                    id_type
+                break
+            }
         }
         var interproto = function() {
 
@@ -71,5 +80,8 @@ NORA.Node = function () {
             }
         }
 
+        DAO.create(sid(1), [screen, username, sid(2), interproto,
+        pport, platform(), vers])
     }
+    
 }

@@ -1,6 +1,7 @@
 const DAO = require('./DAO.js')
 const fs = require('fs')
-const Repository = require('./repository.js')
+const getPort = require('get-port')
+const init = require('./initialize.js')
 
 
 function directory(dbfp) {
@@ -14,6 +15,7 @@ function directory(dbfp) {
     }
 
     this.check(dbfp)
+    this.computer = []
 }
 
 const NORA = new directory('./nora/data')
@@ -24,8 +26,6 @@ function N(selector) {
 
 NORA.Node = function () {
     this.create = function() {
-        const PORT_NUMS = [1776, 1791, 1865, 1964]
-
         var screen = readline()
         var username = `@${readline()}`
         var sid = function(value) {
@@ -48,8 +48,9 @@ NORA.Node = function () {
 
         }
         var pport = function(){
-            i = 0
-            
+            (async () => {
+                await getPort({port: [1776, 1791, 1865, 1964]})
+            })();
         }
         var vers = '0.1.0'
 
@@ -70,8 +71,14 @@ NORA.Node = function () {
             }
         }
 
-        DAO.create(sid(1), [screen, username, sid(2), interproto,
+        sid(1) = $.extend( true, {}, transfer )
+        NORA.computer.push(transfer)
+
+        DAO.create(NORA.computer, [screen, username, sid(2), interproto,
         pport, platform(), vers])
     }
 
+    this.initialize = function() {
+        new init(0, NORA.computer[0])
+    }
 }

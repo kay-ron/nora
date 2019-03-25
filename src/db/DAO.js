@@ -42,6 +42,21 @@ class Level_DB {
             console.log('Computer has been initialized.')
         })
     }
+
+    get(key, II) {
+        db.get(key, II, function (err, value) {
+            if (err) {
+                if (err.NotFound) {
+                    console.error('ERR — Pair not found.')
+                    return
+                } else {
+                    return callback(err)
+                }
+            }
+
+            return value
+        })
+    }
 }
 
 module.exports = Level_DB

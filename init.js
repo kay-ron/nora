@@ -22,7 +22,7 @@ const NORA = new directory('./database')
 
 function N(selector) {
     const datreposit = new Repository(DAO)
-    var selector = selector ? datreposit.getIP : new NORA.Node()
+    selector ? datreposit.getIP(selector) : new NORA.Node()
 }
 
 NORA.Node = function () {

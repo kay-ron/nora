@@ -15,7 +15,6 @@
   "dependencies": {
     "bluebird": "^3.5.3",
     "network": "^0.4.1",
-    "portfinder": "^1.0.20",
-    "sqlite3": "^4.0.6"
+    "portfinder": "^1.0.20"
   }
 }
